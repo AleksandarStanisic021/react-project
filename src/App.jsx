@@ -1,8 +1,5 @@
 import "./App.css";
-
-function Greet() {
-  return <h1>Greet !</h1>;
-}
+import Greet from "./Greet";
 
 function App() {
   const name = "Sasa";
