@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function App() {
   const [showInfo, setShowInfo] = useState(false);
+  const [name, setName] = useState("");
 
   const handleClick = () => {
     setShowInfo(!showInfo);
@@ -13,6 +14,19 @@ function App() {
     <div>
       <button onClick={handleClick}>Click Me</button>
       {showInfo && <Greet name={"Sasa"} age={100} />}
+      <div>
+        {showInfo && (
+          <>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <p>{name}</p>
+          </>
+        )}
+      </div>
     </div>
   );
 }
