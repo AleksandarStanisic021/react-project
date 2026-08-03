@@ -6,7 +6,7 @@ const SignForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
+    console.log("Form submitted", { email, password });
   };
 
   return (
@@ -22,9 +22,19 @@ const SignForm = () => {
           margin: "0 auto",
         }}>
         <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <button style={{ marginTop: "10px" }} type="submit">
           Sign Up
         </button>
