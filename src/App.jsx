@@ -1,6 +1,7 @@
 import "./App.css";
 import Greet from "./Greet";
 import Todo from "./Todo";
+import SignForm from "./SignForm";
 
 import { useState } from "react";
 
@@ -29,6 +30,7 @@ function App() {
           </>
         )}
       </div>
+      <SignForm />
     </div>
   );
 }
