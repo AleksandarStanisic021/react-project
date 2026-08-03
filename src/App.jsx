@@ -1,9 +1,13 @@
 import "./App.css";
 
 function App() {
+  const name = "Sasa";
+  const age = 100;
   return (
     <>
-      <p>Hello, Vite!</p>
+      <p>
+        {name} is {age} years old.
+      </p>
     </>
   );
 }
