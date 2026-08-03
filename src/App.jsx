@@ -1,5 +1,7 @@
 import "./App.css";
 import Greet from "./Greet";
+import Todo from "./Todo";
+
 import { useState } from "react";
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
               onChange={(e) => setName(e.target.value)}
             />
             <p>{name}</p>
+            <Todo />
           </>
         )}
       </div>
