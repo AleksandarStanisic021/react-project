@@ -2,16 +2,11 @@ import "./App.css";
 import Greet from "./Greet";
 
 function App() {
-  const name = "Sasa";
-  const age = 100;
+  const showInfo = false;
   return (
     <>
-      <Greet name={"Sasa"} age={100} />
-      <Greet name={"John"} age={25} />
-      <Greet name={"Jane"} age={30} />
-      <p>
-        {name} is {age} years old.
-      </p>
+      {showInfo && <Greet name={"Sasa"} age={100} />}
+      {showInfo ? <Greet name={"John"} age={25} /> : "Nothing to show"}
     </>
   );
 }
