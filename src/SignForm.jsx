@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 const SignForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted");
@@ -6,6 +11,7 @@ const SignForm = () => {
 
   return (
     <>
+      <h1>Sign Up</h1>
       <form
         onSubmit={handleSubmit}
         style={{
@@ -18,7 +24,7 @@ const SignForm = () => {
         <label htmlFor="email">Email:</label>
         <input type="email" id="email" name="email" />
         <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" />
+        <input type="password" id="password" />
         <button style={{ marginTop: "10px" }} type="submit">
           Sign Up
         </button>
