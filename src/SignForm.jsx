@@ -31,7 +31,13 @@ const SignForm = () => {
           type="password"
           id="password"
           name="password"
-          {...register("password", { required: true })}
+          {...register("password", {
+            required: true,
+            minLength: {
+              value: 6,
+              message: "Password must be at least 6 characters long",
+            },
+          })}
         />
         <button
           style={{
