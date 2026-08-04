@@ -1,19 +1,22 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 const SignForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted", { email, password });
-  };
+  function onSubmit(data) {
+    console.log(data);
+  }
 
   return (
     <>
       <h1>Sign Up</h1>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -35,7 +38,16 @@ const SignForm = () => {
           name="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button style={{ marginTop: "10px" }} type="submit">
+        <button
+          style={{
+            marginTop: "10px",
+            backgroundColor: "#007bff",
+            color: "#fff",
+            border: "none",
+            padding: "10px 20px",
+            borderRadius: "5px",
+          }}
+          type="submit">
           Sign Up
         </button>
       </form>
