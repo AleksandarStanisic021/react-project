@@ -1,7 +1,11 @@
 import { useForm } from "react-hook-form";
 
 const SignForm = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   function onSubmit(data) {
     console.log(data);
@@ -20,6 +24,9 @@ const SignForm = () => {
           margin: "0 auto",
         }}>
         <label htmlFor="email">Email:</label>
+        {errors.email && (
+          <span style={{ color: "red" }}>{errors.email.message}</span>
+        )}
         <input
           type="email"
           id="email"
@@ -27,6 +34,11 @@ const SignForm = () => {
           {...register("email", { required: true })}
         />
         <label htmlFor="password">Password:</label>
+        {errors.password && (
+          <span style={{ color: "red", fontSize: "12px" }}>
+            {errors.password.message}
+          </span>
+        )}
         <input
           type="password"
           id="password"
