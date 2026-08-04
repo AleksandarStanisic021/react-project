@@ -1,12 +1,7 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const SignForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
     console.log(data);
@@ -29,14 +24,14 @@ const SignForm = () => {
           type="email"
           id="email"
           name="email"
-          onChange={(e) => setEmail(e.target.value)}
+          {...register("email", { required: true })}
         />
         <label htmlFor="password">Password:</label>
         <input
           type="password"
           id="password"
           name="password"
-          onChange={(e) => setPassword(e.target.value)}
+          {...register("password", { required: true })}
         />
         <button
           style={{
