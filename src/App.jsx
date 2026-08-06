@@ -50,10 +50,10 @@ function App() {
             />
             <p>{name}</p>
             <Todo />
+            <SignForm />
           </>
         )}
       </div>
-      <SignForm />
     </div>
   );
 }
