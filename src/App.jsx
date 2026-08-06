@@ -2,7 +2,7 @@ import "./App.css";
 import Greet from "./Greet";
 import Todo from "./Todo";
 import SignForm from "./SignForm";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -10,6 +10,7 @@ function Home() {
   return (
     <div>
       <h1>Home Page</h1>
+      <Link to="/about">Go to About</Link>
     </div>
   );
 }
@@ -17,6 +18,7 @@ function About() {
   return (
     <div>
       <h1>About Page</h1>
+      <Link to="/home">Go to Home</Link>
     </div>
   );
 }
