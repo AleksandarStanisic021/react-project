@@ -36,6 +36,14 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route
+          path="*"
+          element={
+            <>
+              <h1>not found</h1>{" "}
+            </>
+          }
+        />
       </Routes>
 
       <button onClick={handleClick}>Click Me</button>
