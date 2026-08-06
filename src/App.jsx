@@ -1,12 +1,10 @@
 import "./App.css";
-import Greet from "./Greet";
-import Todo from "./Todo";
-import SignForm from "./SignForm";
+
 import { Routes, Route, Link } from "react-router-dom";
-import Profile from "./Profile";
 
 import { useState } from "react";
 
+/*
 function Home() {
   return (
     <div>
@@ -22,16 +20,18 @@ function About() {
     </div>
   );
 }
+*/
 
 function App() {
+  /*
   const [showInfo, setShowInfo] = useState(false);
   const [name, setName] = useState("");
 
   const handleClick = () => {
     setShowInfo(!showInfo);
-  };
+  };*/
 
-  return (
+  /*
     <div>
       <nav
         style={{
@@ -68,8 +68,11 @@ function App() {
             <SignForm />
           </>
         )}
-      </div>
-    </div>
+      </div>*/
+  return (
+    <>
+      <h1>Welcome to the App</h1>
+    </>
   );
 }
 
