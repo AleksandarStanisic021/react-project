@@ -3,6 +3,7 @@ import Greet from "./Greet";
 import Todo from "./Todo";
 import SignForm from "./SignForm";
 import { Routes, Route, Link } from "react-router-dom";
+import Profile from "./Profile";
 
 import { useState } from "react";
 
@@ -10,7 +11,6 @@ function Home() {
   return (
     <div>
       <h1>Home Page</h1>
-      <Link to="/about">Go to About</Link>
     </div>
   );
 }
@@ -43,18 +43,14 @@ function App() {
         <Link to="/home">Home</Link>
 
         <Link to="/about">About</Link>
+        <Link to="/profile">Profile</Link>
+        <Link to="/login">Login</Link>
       </nav>
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route
-          path="*"
-          element={
-            <>
-              <h1>not found</h1>{" "}
-            </>
-          }
-        />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<SignForm />} />
       </Routes>
 
       <button onClick={handleClick}>Click Me</button>
