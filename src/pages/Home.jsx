@@ -13,7 +13,7 @@ function Home() {
       </div>
       <div className="container">
         <h2 className="page-title">Our Products</h2>
-        <div className="products-grid">
+        <div className="product-grid">
           {products.map((product) => (
             <div key={product.id} className="product-card">
               <img
@@ -29,9 +29,8 @@ function Home() {
                 <p className="product-card-description">
                   {product.description}
                 </p>
-                <div className="product-card-actions">
-                  <button className="btn btn-primary">Add to Cart</button>
-                </div>
+
+                <button className="btn btn-primary">Add to Cart</button>
               </div>
             </div>
           ))}
