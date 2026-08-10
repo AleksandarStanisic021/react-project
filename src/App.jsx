@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
 import Auth from "./pages/Auth";
+import Navbar from "./components/Navbar";
 
 /*
 function Home() {
@@ -71,6 +72,7 @@ function App() {
       </div>*/
   return (
     <div className="app">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/auth" element={<Auth />} />
