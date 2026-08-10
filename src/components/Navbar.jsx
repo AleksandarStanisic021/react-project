@@ -8,12 +8,16 @@ export default function Navbar() {
           Shop<span style={{ color: "#007bff" }}>Me</span>
         </Link>
         <div className="navbar-links">
-          <Link to="/">Home</Link>
-          <Link to="/checkout">Card</Link>
+          <Link to="/" className="navbar-link">
+            Home
+          </Link>
+          <Link to="/checkout" className="navbar-link">
+            Card
+          </Link>
         </div>
         <div className="navbar-auth">
           <div clasName="navbar-auth-links">
-            <Link to="/auth" className="btn btn-secundary">
+            <Link to="/auth" className="btn btn-secondary">
               Login
             </Link>
             <Link to="/auth" className="btn btn-primary">
