@@ -3,7 +3,7 @@ import Product from "../components/Product.jsx";
 
 function Home() {
   const products = getProducts();
-  console.log(products);
+
   return (
     <div className="page">
       <div className="home-hero">
