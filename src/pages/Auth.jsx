@@ -52,8 +52,8 @@ export default function Auth() {
                     message: "Password must be at least 6 characters long",
                   },
                   maxLength: {
-                    value: 20,
-                    message: "Password cannot exceed 20 characters",
+                    value: 13,
+                    message: "Password cannot exceed 13 characters",
                   },
                 })}
               />
