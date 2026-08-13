@@ -37,14 +37,21 @@ export default function Auth() {
             </button>
           </form>
           <div className="auth-switch">
-            <p>
-              Already have an account?{" "}
-              <span
-                className="auth-link"
-                onClick={() => setMode(mode === "signup" ? "login" : "signup")}>
-                {mode === "signup" ? "Log in" : "Sign up"}
-              </span>
-            </p>
+            {mode === "signup" ? (
+              <p>
+                Already have an account?{" "}
+                <span className="auth-link" onClick={() => setMode("login")}>
+                  Log in
+                </span>
+              </p>
+            ) : (
+              <p>
+                Don't have an account?{" "}
+                <span className="auth-link" onClick={() => setMode("signup")}>
+                  Sign up
+                </span>
+              </p>
+            )}
           </div>
         </div>
       </div>
