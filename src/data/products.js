@@ -72,7 +72,7 @@ const products = [
       "1080p HD webcam with auto-focus and built-in microphone. Ideal for video calls and streaming.",
   },
   {
-    id: 4,
+    id: 34,
     name: "Webcam SUPER HD",
     price: 79.99,
     image:

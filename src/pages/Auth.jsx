@@ -1,7 +1,18 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export default function Auth() {
   const [mode, setMode] = useState("signup");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  function onSubmit(data) {
+    console.log(data);
+  }
+
   return (
     <div className="page">
       <div className="container">
@@ -9,7 +20,7 @@ export default function Auth() {
           <h1 className="page-title">
             {mode === "signup" ? "Sign Up" : "Log In"}
           </h1>
-          <form action="" className="auth-form">
+          <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
               <label className="form-label" htmlFor="email">
                 Email
@@ -19,6 +30,7 @@ export default function Auth() {
                 type="email"
                 name="email"
                 id="email"
+                {...register("email", { required: "Email is required" })}
               />
             </div>
             <div className="form-group">
@@ -30,6 +42,23 @@ export default function Auth() {
                 type="password"
                 name="password"
                 id="password"
+                {...register(
+                  "password",
+                  {
+                    required: "Password is required",
+                    minLength: {
+                      value: 6,
+                      message: "Password must be at least 6 characters long",
+                    },
+                    maxLength: {
+                      value: 20,
+                      message: "Password cannot exceed 20 characters",
+                    },
+                  },
+                  (error) => {
+                    console.log(error.text);
+                  },
+                )}
               />
             </div>
             <button type="submit" className="btn btn-primary btn-large">
