@@ -32,6 +32,9 @@ export default function Auth() {
                 id="email"
                 {...register("email", { required: "Email is required" })}
               />
+              {errors.email && (
+                <span className="error-message">{errors.email.message}</span>
+              )}
             </div>
             <div className="form-group">
               <label className="form-label" htmlFor="password">
@@ -42,24 +45,21 @@ export default function Auth() {
                 type="password"
                 name="password"
                 id="password"
-                {...register(
-                  "password",
-                  {
-                    required: "Password is required",
-                    minLength: {
-                      value: 6,
-                      message: "Password must be at least 6 characters long",
-                    },
-                    maxLength: {
-                      value: 20,
-                      message: "Password cannot exceed 20 characters",
-                    },
+                {...register("password", {
+                  required: "Password is required",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters long",
                   },
-                  (error) => {
-                    console.log(error.text);
+                  maxLength: {
+                    value: 20,
+                    message: "Password cannot exceed 20 characters",
                   },
-                )}
+                })}
               />
+              {errors.password && (
+                <span className="error-message">{errors.password.message}</span>
+              )}
             </div>
             <button type="submit" className="btn btn-primary btn-large">
               {mode === "signup" ? "Sign Up" : "Log In"}
