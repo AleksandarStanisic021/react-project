@@ -1,9 +1,14 @@
+import { useState } from "react";
+
 export default function Auth() {
+  const [mode, setMode] = useState("signup");
   return (
     <div className="page">
       <div className="container">
         <div className="auth-container">
-          <h1 className="page-title">Sign Up</h1>
+          <h1 className="page-title">
+            {mode === "signup" ? "Sign Up" : "Log In"}
+          </h1>
           <form action="" className="auth-form">
             <div className="form-group">
               <label className="form-label" htmlFor="email">
@@ -28,13 +33,17 @@ export default function Auth() {
               />
             </div>
             <button type="submit" className="btn btn-primary btn-large">
-              Sign Up
+              {mode === "signup" ? "Sign Up" : "Log In"}
             </button>
           </form>
           <div className="auth-switch">
             <p>
               Already have an account?{" "}
-              <span className="auth-link">Login here</span>
+              <span
+                className="auth-link"
+                onClick={() => setMode(mode === "signup" ? "login" : "signup")}>
+                {mode === "signup" ? "Log in" : "Sign up"}
+              </span>
             </p>
           </div>
         </div>
