@@ -27,10 +27,16 @@ export default function Auth() {
                 id="password"
               />
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary btn-large">
               Sign Up
             </button>
           </form>
+          <div className="auth-switch">
+            <p>
+              Already have an account?{" "}
+              <span className="auth-link">Login here</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
